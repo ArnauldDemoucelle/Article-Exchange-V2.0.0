@@ -2,8 +2,8 @@
 #
 # “你帮我助”软件
 # 物品交换软件
-# 可以以管理员的身份或者以普通用户的身份登录系统, 新用户也可以注册
-# 管理员登录后可以批准新用户的注册申请, 也可以添加和修改物品类型
+# 可以以管理员的身份或者以普通用户的身份登录系统, 新用户也可以注册,
+# 管理员登录后可以批准新用户的注册申请, 也可以添加和修改物品类型,
 # 普通用户登录后可以按照物品类型显示物品列表, 也可以查找物品的信息, 添加自己的物品并删除自己已添加的物品
 #
 # Written by Arnauld Demoucelle
@@ -47,7 +47,7 @@ def GetUserData():
         userList = pd.read_excel(storageFile, sheet_name=None)
         return userList
     else:
-        df1 = pd.DataFrame(columns=['User', 'Password', 'Location', 'Phone Number', 'Email'])
+        df1 = pd.DataFrame(columns=['Name', 'Password', 'Address', 'Phone Number', 'Email'])
         df2 = df1.copy()
         writer = pd.ExcelWriter('UserData.xlsx')
         df1.to_excel(writer, index=False, sheet_name='CurrentUsers')
